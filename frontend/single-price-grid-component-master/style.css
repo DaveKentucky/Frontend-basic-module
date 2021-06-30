@@ -20,41 +20,35 @@ body {
     margin: 20vh 0;
     border-radius: 2%;
     overflow: hidden;
-    display: flex;
-    flex-direction: column;
-}
-
-.module > div {
-    height: 50%;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(2, auto);
+    grid-template-areas:
+        "header header"
+        "sign_up info";
 }
 
 .module > .header {
+    grid-area: header;
     min-height: max-content;
 }
 
-.module .bottom {
-    display: flex;
-    flex-direction: row;
-}
-
 .text-div {
-    padding: 5%;
+    padding: 30px;
     color: #fffae3;
     letter-spacing: 0.1rem;
 }
 
-.module .bottom .sign_up {
+.module .sign_up {
     background-color: #659aeb;
-    flex-grow: 1;
-    max-width: 50%;
+    grid-area: sign_up;
     display: flex;
     flex-direction: column;
 }
 
-.module .bottom .info {
+.module .info {
     background-color: #83aff2;
-    flex-grow: 1;
-    max-width: 50%;
+    grid-area: info;
 }
 
 .module .header > h1 {
@@ -76,7 +70,7 @@ body {
     font-size: 1rem;
 }
 
-.bottom button {
+.sign_up button {
     display: inline-block;
     margin: auto;
     width: 200px;
@@ -91,7 +85,7 @@ body {
     padding: 0;
 }
 
-.bottom button:hover {
+.sign_up button:hover {
     background-color: #db880c;
 }
 
@@ -109,11 +103,11 @@ h2 {
     font-size: 3rem;
 }
 
-.bottom .info p {
+.info p {
     margin: 0;
 }
 
-.bottom .info span {
+.info span {
     display: block;
     margin: 0;
     font-size: 0.8rem;
